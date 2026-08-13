@@ -1,138 +1,201 @@
+/* =========================================
+   BIRTHDAY PREMIUM TEMPLATE
+   ========================================= */
+
+let currentMemory = 1;
+
+
+/* =========================================
+   SCREEN NAVIGATION
+   ========================================= */
+
+function goTo(screenId) {
+
+    const screens =
+        document.querySelectorAll(".screen");
+
+    screens.forEach(function(screen) {
+
+        screen.classList.remove("active");
+
+    });
+
+
+    const nextScreen =
+        document.getElementById(screenId);
+
+
+    if (nextScreen) {
+
+        nextScreen.classList.add("active");
+
+    }
+}
+
+
+/* =========================================
+   GIFT OPENING
+   ========================================= */
+
 function openGift() {
 
     const gift =
         document.querySelector(".gift");
 
-    const message =
-        document.getElementById("message");
+    const hint =
+        document.getElementById("giftHint");
 
-    const instruction =
-        document.querySelector(".instruction");
-
-
-    /* Open gift */
 
     gift.classList.add("opened");
 
-
-    /* Hide instruction */
-
-    instruction.style.display =
-        "none";
+    hint.style.opacity = "0";
 
 
-    /* Show message */
+    /* Golden particles */
 
-    setTimeout(function () {
-
-        message.classList.remove("hidden");
-
-    }, 600);
+    createParticles(45);
 
 
-    /* Effects */
+    /* Move to memories */
 
-    createHearts();
+    setTimeout(function() {
 
-    createConfetti();
+        goTo("memories");
+
+    }, 1400);
 }
 
 
-/* =========================
-   ONE MORE SURPRISE
-========================= */
+/* =========================================
+   MEMORY DATA
+   ========================================= */
 
-function showSurprise() {
+const memories = [
 
-    const surprise =
-        document.getElementById("surprise");
+    {
+        image: "photo1.jpg",
+        caption: "A beautiful memory ✦"
+    },
 
-    surprise.classList.remove("hidden");
+    {
+        image: "photo2.jpg",
+        caption: "A moment worth remembering ♡"
+    },
 
+    {
+        image: "photo3.jpg",
+        caption: "One more beautiful moment ✨"
+    }
 
-    /* Extra effects */
-
-    createHearts();
-
-    createConfetti();
-
-
-    /* Scroll to surprise */
-
-    setTimeout(function () {
-
-        surprise.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-    }, 100);
-}
+];
 
 
-/* =========================
-   HEARTS
-========================= */
+/* =========================================
+   NEXT MEMORY
+   ========================================= */
 
-function createHearts() {
+function nextMemory() {
 
-    for (let i = 0; i < 25; i++) {
+    const image =
+        document.getElementById("memoryImage");
 
-        const heart =
-            document.createElement("div");
+    const caption =
+        document.getElementById("memoryCaption");
 
-        heart.className =
-            "heart";
+    const number =
+        document.getElementById("memoryNumber");
 
-        heart.innerHTML =
-            "💖";
-
-        heart.style.left =
-            Math.random() * 100 + "vw";
-
-        heart.style.animationDelay =
-            Math.random() * 1.5 + "s";
+    const button =
+        document.getElementById("memoryButton");
 
 
-        document.body.appendChild(
-            heart
-        );
+    /* If memories are finished */
+
+    if (currentMemory >= 3) {
+
+        goTo("letterScreen");
+
+        return;
+
+    }
 
 
-        setTimeout(function () {
+    currentMemory++;
 
-            heart.remove();
 
-        }, 5000);
+    /* Fade old image */
+
+    image.classList.add("changing");
+
+
+    setTimeout(function() {
+
+        image.src =
+            memories[currentMemory - 1].image;
+
+        caption.textContent =
+            memories[currentMemory - 1].caption;
+
+        number.textContent =
+            "0" + currentMemory + " / 03";
+
+
+        image.classList.remove("changing");
+
+
+    }, 400);
+
+
+    /* Change final button */
+
+    if (currentMemory === 3) {
+
+        button.textContent =
+            "Continue →";
+
     }
 }
 
 
-/* =========================
-   CONFETTI
-========================= */
+/* =========================================
+   FINAL SCREEN
+   ========================================= */
 
-function createConfetti() {
+function showFinal() {
+
+    createParticles(70);
+
+    goTo("finalScreen");
+
+}
+
+
+/* =========================================
+   GOLDEN PARTICLES
+   ========================================= */
+
+function createParticles(amount) {
 
     const symbols = [
+        "✦",
+        "✧",
+        "⋆",
         "✨",
-        "🎉",
-        "⭐",
-        "💫",
-        "🎊"
+        "♡"
     ];
 
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < amount; i++) {
 
-        const confetti =
+        const particle =
             document.createElement("div");
 
-        confetti.className =
-            "confetti";
+
+        particle.className =
+            "particle";
 
 
-        confetti.innerHTML =
+        particle.textContent =
             symbols[
                 Math.floor(
                     Math.random() *
@@ -141,23 +204,43 @@ function createConfetti() {
             ];
 
 
-        confetti.style.left =
+        particle.style.left =
             Math.random() * 100 + "vw";
 
 
-        confetti.style.animationDelay =
-            Math.random() * 2 + "s";
+        particle.style.fontSize =
+            (10 + Math.random() * 20) + "px";
+
+
+        particle.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+
+        particle.style.animationDelay =
+            Math.random() * 1.5 + "s";
 
 
         document.body.appendChild(
-            confetti
+            particle
         );
 
 
-        setTimeout(function () {
+        setTimeout(function() {
 
-            confetti.remove();
+            particle.remove();
 
-        }, 4000);
+        }, 7000);
+
     }
 }
+
+
+/* =========================================
+   STARTING PARTICLES
+   ========================================= */
+
+setTimeout(function() {
+
+    createParticles(20);
+
+}, 800);
