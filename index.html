@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Birthday Gift 🎂</title>
 
     <link rel="stylesheet" href="style.css">
@@ -11,13 +12,44 @@
 
 <body>
 
-    <h1>🎂 Happy Birthday! 🎂</h1>
+    <div class="container">
 
-    <p>Someone has a special gift for you... 🎁</p>
+        <h1>🎂 Happy Birthday! 🎂</h1>
 
-    <button onclick="openGift()">Open Your Gift 🎁</button>
+        <p class="subtitle">
+            I have a little surprise for you... 💝
+        </p>
 
-    <div id="message"></div>
+        <div class="gift" onclick="openGift()">
+
+            <div class="lid"></div>
+
+            <div class="box">
+                <div class="ribbon"></div>
+            </div>
+
+        </div>
+
+        <p class="instruction">
+            Tap the gift 🎁
+        </p>
+
+        <div id="message" class="hidden">
+
+            <h2>🎉 Happy Birthday! 🎉</h2>
+
+            <p>
+                May your day be filled with happiness,
+                beautiful memories and lots of smiles. 💖
+            </p>
+
+            <p>
+                You deserve a wonderful day! ✨
+            </p>
+
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 
