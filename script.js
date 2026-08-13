@@ -1,6 +1,7 @@
 function openGift() {
 
-    const gift = document.querySelector(".gift");
+    const gift =
+        document.querySelector(".gift");
 
     const message =
         document.getElementById("message");
@@ -16,10 +17,11 @@ function openGift() {
 
     /* Hide instruction */
 
-    instruction.style.display = "none";
+    instruction.style.display =
+        "none";
 
 
-    /* Show birthday message */
+    /* Show message */
 
     setTimeout(function () {
 
@@ -28,18 +30,49 @@ function openGift() {
     }, 600);
 
 
-    /* Create hearts */
+    /* Effects */
 
     createHearts();
-
-
-    /* Create confetti */
 
     createConfetti();
 }
 
 
-/* Hearts */
+/* =========================
+   ONE MORE SURPRISE
+========================= */
+
+function showSurprise() {
+
+    const surprise =
+        document.getElementById("surprise");
+
+    surprise.classList.remove("hidden");
+
+
+    /* Extra effects */
+
+    createHearts();
+
+    createConfetti();
+
+
+    /* Scroll to surprise */
+
+    setTimeout(function () {
+
+        surprise.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 100);
+}
+
+
+/* =========================
+   HEARTS
+========================= */
 
 function createHearts() {
 
@@ -48,9 +81,11 @@ function createHearts() {
         const heart =
             document.createElement("div");
 
-        heart.className = "heart";
+        heart.className =
+            "heart";
 
-        heart.innerHTML = "💖";
+        heart.innerHTML =
+            "💖";
 
         heart.style.left =
             Math.random() * 100 + "vw";
@@ -58,7 +93,10 @@ function createHearts() {
         heart.style.animationDelay =
             Math.random() * 1.5 + "s";
 
-        document.body.appendChild(heart);
+
+        document.body.appendChild(
+            heart
+        );
 
 
         setTimeout(function () {
@@ -70,7 +108,9 @@ function createHearts() {
 }
 
 
-/* Confetti */
+/* =========================
+   CONFETTI
+========================= */
 
 function createConfetti() {
 
@@ -90,6 +130,7 @@ function createConfetti() {
 
         confetti.className =
             "confetti";
+
 
         confetti.innerHTML =
             symbols[
