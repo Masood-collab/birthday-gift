@@ -25,11 +25,13 @@ body {
 .container {
     width: 90%;
     max-width: 520px;
+
     padding: 30px 10px;
 }
 
 h1 {
     font-size: 40px;
+
     margin-bottom: 10px;
 
     text-shadow:
@@ -38,10 +40,14 @@ h1 {
 
 .subtitle {
     font-size: 20px;
+
     margin-bottom: 50px;
 }
 
-/* Gift */
+
+/* =========================
+   GIFT
+========================= */
 
 .gift {
     width: 190px;
@@ -53,14 +59,16 @@ h1 {
 
     cursor: pointer;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease;
 }
 
 .gift:hover {
     transform: scale(1.08);
 }
 
-/* Gift box */
+
+/* Box */
 
 .box {
     position: absolute;
@@ -79,7 +87,8 @@ h1 {
         0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Gift lid */
+
+/* Lid */
 
 .lid {
     position: absolute;
@@ -100,6 +109,7 @@ h1 {
         transform 0.7s ease;
 }
 
+
 /* Ribbon */
 
 .ribbon {
@@ -113,7 +123,6 @@ h1 {
     background: #ffd166;
 }
 
-/* Ribbon on lid */
 
 .lid::after {
     content: "";
@@ -128,54 +137,10 @@ h1 {
     background: #ffd166;
 }
 
-/* Instruction */
 
-.instruction {
-    margin-top: 25px;
-
-    font-size: 18px;
-
-    animation: pulse 1.5s infinite;
-}
-
-/* Message */
-
-#message {
-    margin-top: 35px;
-
-    padding: 25px;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 22px;
-
-    backdrop-filter: blur(8px);
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15);
-
-    animation: appear 1s ease;
-}
-
-#message h2 {
-    font-size: 32px;
-
-    margin-top: 0;
-}
-
-#message p {
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Gift opening */
+/* =========================
+   OPEN GIFT
+========================= */
 
 .gift.opened .lid {
 
@@ -190,7 +155,153 @@ h1 {
         scale(1.08);
 }
 
-/* Heart animation */
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction {
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    animation:
+        appear 1s ease;
+}
+
+#message h2 {
+
+    font-size: 30px;
+
+    margin-top: 0;
+}
+
+#message p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-button {
+
+    margin-top: 15px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #ff3f75;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.surprise-button:hover {
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================
+   SECOND SURPRISE
+========================= */
+
+#surprise {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    border-radius: 22px;
+
+    animation:
+        appear 1s ease;
+}
+
+#surprise h2 {
+
+    font-size: 27px;
+}
+
+#surprise p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.stars {
+
+    margin-top: 20px;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   HEARTS
+========================= */
 
 .heart {
 
@@ -229,7 +340,10 @@ h1 {
     }
 }
 
-/* Confetti */
+
+/* =========================
+   CONFETTI
+========================= */
 
 .confetti {
 
@@ -268,7 +382,10 @@ h1 {
     }
 }
 
-/* Pulse */
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes pulse {
 
@@ -285,7 +402,6 @@ h1 {
     }
 }
 
-/* Message appearance */
 
 @keyframes appear {
 
@@ -308,7 +424,10 @@ h1 {
     }
 }
 
-/* Mobile */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 500px) {
 
@@ -322,10 +441,6 @@ h1 {
 
     .gift {
         transform: scale(0.9);
-    }
-
-    .gift:hover {
-        transform: scale(0.95);
     }
 
     #message h2 {
