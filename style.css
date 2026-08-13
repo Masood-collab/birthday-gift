@@ -61,6 +61,7 @@ h1 {
     background: #ff2f6d;
     border-radius: 8px;
     z-index: 2;
+    transition: transform 0.6s ease;
 }
 
 .ribbon {
@@ -97,6 +98,16 @@ h1 {
     display: none;
 }
 
+/* Gift opening animation */
+
+.gift.opened .lid {
+    transform: translateY(-70px) rotate(-10deg);
+}
+
+.gift.opened {
+    transform: scale(1.05);
+}
+
 @keyframes appear {
     from {
         opacity: 0;
@@ -107,4 +118,4 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
-    }
+}
