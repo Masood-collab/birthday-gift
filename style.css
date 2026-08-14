@@ -12,16 +12,17 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
+
     background:
         radial-gradient(
             circle at 50% 20%,
-            #26152f 0%,
-            #100b15 40%,
-            #030305 100%
+            #24132d 0%,
+            #0e0913 42%,
+            #020204 100%
         );
 
     color: #f5eee3;
@@ -40,23 +41,25 @@ body {
    ========================================= */
 
 .background-glow {
+
     position: fixed;
 
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
 
     left: 50%;
-    top: 45%;
+    top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(201, 157, 76, 0.09),
-            transparent 65%
+            rgba(205, 164, 86, 0.11),
+            transparent 68%
         );
 
     filter: blur(20px);
@@ -64,15 +67,17 @@ body {
     pointer-events: none;
 
     animation:
-        backgroundPulse 5s ease-in-out infinite alternate;
+        backgroundPulse
+        6s ease-in-out infinite alternate;
 }
+
 
 @keyframes backgroundPulse {
 
     from {
         transform:
             translate(-50%, -50%)
-            scale(0.8);
+            scale(0.75);
     }
 
     to {
@@ -80,11 +85,12 @@ body {
             translate(-50%, -50%)
             scale(1.2);
     }
+
 }
 
 
 /* =========================================
-   SCREEN
+   SCREENS
    ========================================= */
 
 .screen {
@@ -126,6 +132,7 @@ body {
     z-index: 2;
 }
 
+
 .screen.active {
 
     opacity: 1;
@@ -144,7 +151,7 @@ body {
 
 .eyebrow {
 
-    color: #c9a35d;
+    color: #d4ad62;
 
     font-family:
         Arial,
@@ -154,16 +161,15 @@ body {
 
     letter-spacing: 5px;
 
-    margin-bottom: 25px;
-
-    opacity: 0.9;
+    margin-bottom: 22px;
 }
+
 
 .tiny-text {
 
-    font-size: 15px;
+    font-size: 14px;
 
-    color: #9d929f;
+    color: #958b9b;
 
     margin-bottom: 0;
 }
@@ -183,14 +189,16 @@ h1 {
     letter-spacing: -1px;
 }
 
+
 h1 span {
 
-    color: #d4ad62;
+    color: #d5ae63;
 
     font-style: italic;
 
     text-shadow:
-        0 0 30px rgba(212, 173, 98, 0.2);
+        0 0 35px
+        rgba(213, 174, 99, 0.35);
 }
 
 
@@ -226,7 +234,7 @@ p {
 
 
 /* =========================================
-   GOLD NAME
+   NAME
    ========================================= */
 
 .gold-name {
@@ -239,29 +247,35 @@ p {
     font-style: italic;
 
     text-shadow:
-        0 0 35px rgba(213, 174, 99, 0.25);
+        0 0 35px
+        rgba(213, 174, 99, 0.25);
 
     animation:
-        nameGlow 3s ease-in-out infinite alternate;
+        nameGlow
+        3s ease-in-out infinite alternate;
 }
+
 
 @keyframes nameGlow {
 
     from {
         text-shadow:
-            0 0 20px rgba(213, 174, 99, 0.15);
+            0 0 20px
+            rgba(213, 174, 99, 0.15);
     }
 
     to {
         text-shadow:
-            0 0 45px rgba(213, 174, 99, 0.4);
+            0 0 50px
+            rgba(213, 174, 99, 0.45);
     }
+
 }
 
 
 .gold-line {
 
-    width: 70px;
+    width: 75px;
 
     height: 1px;
 
@@ -285,10 +299,9 @@ button {
 
     margin-top: 28px;
 
-    padding: 14px 30px;
+    padding: 14px 31px;
 
     border:
-
         1px solid
         rgba(212, 173, 98, 0.55);
 
@@ -299,7 +312,9 @@ button {
 
     color: #d9b76f;
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        sans-serif;
 
     font-size: 13px;
 
@@ -315,17 +330,18 @@ button {
     backdrop-filter: blur(10px);
 }
 
+
 button:hover {
 
     transform:
         translateY(-3px);
 
     background:
-        rgba(212, 173, 98, 0.15);
+        rgba(212, 173, 98, 0.14);
 
     box-shadow:
-        0 10px 35px
-        rgba(212, 173, 98, 0.15);
+        0 12px 35px
+        rgba(212, 173, 98, 0.16);
 }
 
 
@@ -348,14 +364,13 @@ button:hover {
         transform 0.5s ease;
 }
 
+
 .gift:hover {
 
     transform:
         scale(1.06);
 }
 
-
-/* Glow */
 
 .gift-glow {
 
@@ -375,8 +390,10 @@ button:hover {
     filter: blur(25px);
 
     animation:
-        giftGlow 2.5s ease-in-out infinite alternate;
+        giftGlow
+        2.5s ease-in-out infinite alternate;
 }
+
 
 @keyframes giftGlow {
 
@@ -389,10 +406,9 @@ button:hover {
         transform: scale(1.15);
         opacity: 1;
     }
+
 }
 
-
-/* Gift box */
 
 .box {
 
@@ -423,8 +439,6 @@ button:hover {
 }
 
 
-/* Lid */
-
 .lid {
 
     position: absolute;
@@ -451,7 +465,8 @@ button:hover {
         rgba(212, 173, 98, 0.8);
 
     transition:
-        transform 0.9s cubic-bezier(
+        transform 0.9s
+        cubic-bezier(
             0.22,
             1,
             0.36,
@@ -459,8 +474,6 @@ button:hover {
         );
 }
 
-
-/* Ribbon */
 
 .ribbon {
 
@@ -485,14 +498,13 @@ button:hover {
 }
 
 
-/* Opening */
-
 .gift.opened .lid {
 
     transform:
         translateY(-95px)
         rotate(-9deg);
 }
+
 
 .gift.opened {
 
@@ -512,8 +524,10 @@ button:hover {
     color: #bcae9e;
 
     animation:
-        hintPulse 1.8s ease-in-out infinite;
+        hintPulse
+        1.8s ease-in-out infinite;
 }
+
 
 @keyframes hintPulse {
 
@@ -525,6 +539,7 @@ button:hover {
     50% {
         opacity: 1;
     }
+
 }
 
 
@@ -550,7 +565,8 @@ button:hover {
         rotate(-2deg);
 
     animation:
-        cardAppear 0.8s ease;
+        cardAppear
+        0.8s ease;
 }
 
 
@@ -580,7 +596,7 @@ button:hover {
 
     transition:
         transform 0.8s ease,
-        opacity 0.4s ease;
+        opacity 0.45s ease;
 }
 
 
@@ -599,8 +615,6 @@ button:hover {
         scale(1.08);
 }
 
-
-/* Number */
 
 .memory-number {
 
@@ -626,17 +640,12 @@ button:hover {
 }
 
 
-/* Caption */
-
 .memory-caption {
 
-    padding: 15px 8px 10px;
+    padding:
+        15px 8px 10px;
 
     color: #40383b;
-
-    font-family:
-        Georgia,
-        serif;
 
     font-size: 16px;
 
@@ -663,58 +672,168 @@ button:hover {
             translateX(0)
             rotate(-2deg);
     }
+
 }
 
 
 /* =========================================
-   LETTER
+   PREMIUM LETTER
    ========================================= */
+
+.letter-wrapper {
+
+    position: relative;
+
+    width:
+        min(520px, 92vw);
+}
+
+
+.letter-glow {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 30px;
+
+    background:
+        rgba(211, 170, 92, 0.10);
+
+    filter: blur(45px);
+
+    animation:
+        letterGlow
+        3s ease-in-out infinite alternate;
+}
+
+
+@keyframes letterGlow {
+
+    from {
+        transform: scale(0.85);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(1.08);
+        opacity: 0.9;
+    }
+
+}
+
 
 .letter {
 
-    width:
-        min(500px, 90vw);
+    position: relative;
 
-    padding: 25px;
+    padding:
+        30px 28px;
 
     border:
         1px solid
-        rgba(212, 173, 98, 0.22);
+        rgba(212, 173, 98, 0.32);
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     background:
-        rgba(255, 255, 255, 0.035);
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
 
     box-shadow:
-        0 25px 70px
-        rgba(0, 0, 0, 0.4);
+        0 30px 80px
+        rgba(0, 0, 0, 0.55);
 
     backdrop-filter:
-        blur(12px);
+        blur(16px);
 
     animation:
-        letterAppear 1s ease;
+        letterAppear
+        1s ease;
+}
+
+
+.letter-top {
+
+    color: #d5ae63;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.letter-line {
+
+    width: 70px;
+
+    height: 1px;
+
+    margin:
+        12px auto 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d5ae63,
+            transparent
+        );
+}
+
+
+.letter h2 {
+
+    color: #f3eadc;
+
+    font-size:
+        clamp(28px, 7vw, 42px);
+
+    font-style: italic;
+
+    margin-bottom: 18px;
+}
+
+
+.letter h2 span {
+
+    color: #d5ae63;
 }
 
 
 .letter p {
 
-    color: #c4bac5;
+    color: #c5bac5;
 
-    margin: 13px 0;
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin:
+        12px auto;
 }
 
 
 .signature {
-
-    margin-top: 22px;
 
     color: #d5ae63;
 
     font-size: 18px;
 
     font-style: italic;
+
+    margin-top: 18px;
 }
 
 
@@ -725,7 +844,8 @@ button:hover {
         opacity: 0;
 
         transform:
-            translateY(30px);
+            translateY(40px)
+            scale(0.96);
     }
 
     to {
@@ -733,13 +853,15 @@ button:hover {
         opacity: 1;
 
         transform:
-            translateY(0);
+            translateY(0)
+            scale(1);
     }
+
 }
 
 
 /* =========================================
-   FINAL SCREEN
+   FINAL
    ========================================= */
 
 .final-light {
@@ -757,7 +879,8 @@ button:hover {
     filter: blur(80px);
 
     animation:
-        finalGlow 4s ease-in-out infinite alternate;
+        finalGlow
+        4s ease-in-out infinite alternate;
 }
 
 
@@ -770,20 +893,15 @@ button:hover {
     to {
         transform: scale(1.3);
     }
+
 }
 
-
-/* Heart */
 
 .heart {
 
     position: relative;
 
     color: #d6ad61;
-
-    font-family:
-        Georgia,
-        serif;
 
     font-size: 110px;
 
@@ -794,7 +912,8 @@ button:hover {
         rgba(214, 173, 97, 0.35);
 
     animation:
-        heartBeat 1.7s ease-in-out infinite;
+        heartBeat
+        1.7s ease-in-out infinite;
 }
 
 
@@ -808,6 +927,7 @@ button:hover {
     50% {
         transform: scale(1.12);
     }
+
 }
 
 
@@ -892,6 +1012,7 @@ button:hover {
 
         opacity: 0;
     }
+
 }
 
 
@@ -902,57 +1023,45 @@ button:hover {
 @media (max-width: 600px) {
 
     .screen {
-
-        padding:
-            20px;
+        padding: 20px;
     }
 
     h1 {
-
         font-size:
             clamp(38px, 12vw, 60px);
     }
 
     h2 {
-
         font-size:
             clamp(28px, 9vw, 42px);
     }
 
     p {
-
         font-size: 15px;
     }
 
     .gift {
-
-        transform:
-            scale(0.9);
-    }
-
-    .gift:hover {
-
-        transform:
-            scale(0.95);
+        transform: scale(0.9);
     }
 
     .memory-card {
-
         width: 280px;
     }
 
     .memory-image {
-
         height: 330px;
     }
 
     .letter {
+        padding: 22px 18px;
+    }
 
-        padding: 20px;
+    .letter p {
+        font-size: 13px;
     }
 
     .heart {
-
         font-size: 90px;
     }
-        }
+
+           }
