@@ -73,17 +73,17 @@ function openGift() {
 const memories = [
 
     {
-        image: "photo1.jpg",
+        image: "Screenshot_2026-08-02-21-13-33-332_com.miui.mediaviewer.jpg",
         caption: "A beautiful memory ✦"
     },
 
     {
-        image: "photo2.jpg",
+        image: "B612_20220531_173320_089.jpg",
         caption: "A moment worth remembering ♡"
     },
 
     {
-        image: "photo3.jpg",
+        image: "Snapchat-1575289812.jpg",
         caption: "One more beautiful moment ✨"
     }
 
