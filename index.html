@@ -12,21 +12,33 @@
 
 <body>
 
-    <div class="background-glow"></div>
+    <!-- Ambient background -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
     <div id="particles"></div>
 
+    <!-- Music control -->
+    <button id="musicButton"
+            class="music-button"
+            onclick="toggleMusic()">
+        ♫
+    </button>
 
-    <!-- =========================
+
+    <!-- =================================
          INTRO
-    ========================== -->
+    ================================== -->
 
     <section id="intro" class="screen active">
+
+        <div class="hero-orbit"></div>
 
         <div class="eyebrow">
             A LITTLE SURPRISE
         </div>
 
-        <h1>
+        <h1 class="hero-title">
             Something<br>
             <span>special</span>
             awaits.
@@ -37,16 +49,21 @@
             This was made just for you.
         </p>
 
-        <button onclick="goTo('nameScreen')">
-            Enter ✦
+        <button class="luxury-button"
+                onclick="startExperience()">
+            Enter <span>✦</span>
         </button>
+
+        <div class="scroll-hint">
+            ✦ &nbsp; made with a little magic &nbsp; ✦
+        </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          NAME
-    ========================== -->
+    ================================== -->
 
     <section id="nameScreen" class="screen">
 
@@ -69,16 +86,17 @@
             something a little more special.
         </p>
 
-        <button onclick="goTo('giftScreen')">
-            Continue →
+        <button class="luxury-button"
+                onclick="goTo('giftScreen')">
+            Continue <span>→</span>
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          GIFT
-    ========================== -->
+    ================================== -->
 
     <section id="giftScreen" class="screen">
 
@@ -86,35 +104,53 @@
             YOUR SURPRISE
         </div>
 
-        <h2>
+        <h2 class="section-title">
             There's something<br>
             waiting for you.
         </h2>
 
-        <div class="gift" onclick="openGift()">
+        <div class="gift-stage">
 
-            <div class="gift-glow"></div>
+            <div class="gift-aura"></div>
 
-            <div class="lid">
-                <div class="ribbon"></div>
-            </div>
+            <div class="gift"
+                 id="gift"
+                 onclick="openGift()">
 
-            <div class="box">
-                <div class="ribbon"></div>
+                <div class="gift-shadow"></div>
+
+                <div class="gift-box">
+
+                    <div class="box-side"></div>
+
+                    <div class="ribbon-vertical"></div>
+
+                </div>
+
+                <div class="gift-lid">
+
+                    <div class="ribbon-horizontal"></div>
+
+                    <div class="bow bow-left"></div>
+                    <div class="bow bow-right"></div>
+
+                </div>
+
             </div>
 
         </div>
 
-        <p id="giftHint">
+        <p id="giftHint"
+           class="gift-hint">
             Tap the gift ✦
         </p>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          MEMORIES
-    ========================== -->
+    ================================== -->
 
     <section id="memories" class="screen">
 
@@ -122,153 +158,191 @@
             LITTLE MEMORIES
         </div>
 
-        <h2>
+        <h2 class="section-title">
             Three moments.<br>
             Three memories.
         </h2>
 
-        <div class="memory-card">
+        <div class="memory-scene">
 
-            <div class="memory-image">
+            <div class="memory-glow"></div>
 
-                <img
-                    id="memoryImage"
-                    src="Screenshot_2026-08-02-21-13-33-332_com.miui.mediaviewer.jpg"
-                    alt="Birthday memory">
+            <div class="memory-card"
+                 id="memoryCard">
 
-                <div class="memory-number"
-                     id="memoryNumber">
-                    01 / 03
+                <div class="memory-image">
+
+                    <img
+                        id="memoryImage"
+                        src="Screenshot_2026-08-02-21-13-33-332_com.miui.mediaviewer.jpg"
+                        alt="Birthday memory">
+
+                    <div class="image-overlay"></div>
+
+                    <div class="memory-number"
+                         id="memoryNumber">
+                        01 / 03
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="memory-caption"
-                 id="memoryCaption">
-
-                A beautiful memory ✦
+                <div class="memory-caption"
+                     id="memoryCaption">
+                    A beautiful memory ✦
+                </div>
 
             </div>
 
         </div>
 
-        <button onclick="nextMemory()"
-                id="memoryButton">
-
-            Next memory →
-
+        <button class="luxury-button"
+                id="memoryButton"
+                onclick="nextMemory()">
+            Next memory <span>→</span>
         </button>
 
     </section>
 
 
-    <!-- =========================
-         PREMIUM LETTER
-    ========================== -->
+    <!-- =================================
+         LETTER
+    ================================== -->
 
-    <section id="letterScreen" class="screen">
+    <section id="letterScreen"
+             class="screen">
 
         <div class="eyebrow">
             A LITTLE MESSAGE
         </div>
 
-        <div class="letter-wrapper">
+        <div class="envelope-scene">
 
-            <div class="letter-glow"></div>
+            <div class="envelope-glow"></div>
 
-            <div class="letter">
+            <div class="envelope"
+                 id="envelope">
 
-                <div class="letter-top">
-                    ✦ &nbsp; A MESSAGE FOR YOU &nbsp; ✦
+                <div class="envelope-back"></div>
+
+                <div class="letter-paper">
+
+                    <div class="letter-inner">
+
+                        <div class="letter-top">
+                            ✦ &nbsp; A MESSAGE FOR YOU &nbsp; ✦
+                        </div>
+
+                        <div class="letter-line"></div>
+
+                        <h2>
+                            Dear <span>Masood</span>,
+                        </h2>
+
+                        <div class="letter-message">
+
+                            <p>
+                                Happy Birthday! 🎂
+                            </p>
+
+                            <p>
+                                I hope this new chapter of
+                                your life brings you happiness,
+                                peace and countless beautiful
+                                moments.
+                            </p>
+
+                            <p>
+                                May you always find reasons
+                                to smile, people who appreciate
+                                you, and memories worth keeping.
+                            </p>
+
+                            <p>
+                                Keep shining, keep dreaming,
+                                and never forget how special
+                                you are.
+                            </p>
+
+                        </div>
+
+                        <div class="letter-line"></div>
+
+                        <div class="signature">
+                            With best wishes ♡
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="letter-line"></div>
-
-                <h2>
-                    Dear <span>Masood</span>,
-                </h2>
-
-                <div id="letterText">
-
-                    <p>
-                        Happy Birthday! 🎂
-                    </p>
-
-                    <p>
-                        I hope this new chapter of your
-                        life brings you happiness, peace
-                        and countless beautiful moments.
-                    </p>
-
-                    <p>
-                        May you always find reasons to smile,
-                        people who appreciate you, and memories
-                        worth keeping.
-                    </p>
-
-                    <p>
-                        Keep shining, keep dreaming,
-                        and never forget how special
-                        you are.
-                    </p>
-
-                </div>
-
-                <div class="letter-line"></div>
-
-                <div class="signature">
-                    With best wishes ♡
-                </div>
+                <div class="envelope-flap"></div>
 
             </div>
 
         </div>
 
-        <button onclick="showFinal()">
-            There's one more thing ✦
+        <button class="luxury-button letter-button"
+                onclick="showFinal()">
+            There's one more thing <span>✦</span>
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          FINAL
-    ========================== -->
+    ================================== -->
 
-    <section id="finalScreen" class="screen">
+    <section id="finalScreen"
+             class="screen">
 
-        <div class="final-light"></div>
+        <div class="celebration-glow"></div>
 
-        <div class="eyebrow">
-            ONE LAST THING
+        <div id="confetti"></div>
+
+        <div class="final-content">
+
+            <div class="eyebrow">
+                ONE LAST THING
+            </div>
+
+            <div class="heart">
+                ♡
+            </div>
+
+            <div class="final-small">
+                TODAY IS YOUR DAY
+            </div>
+
+            <h1>
+                Happy Birthday
+            </h1>
+
+            <h2 class="final-name">
+                Masood
+            </h2>
+
+            <div class="final-divider">
+                <span>✦</span>
+            </div>
+
+            <p>
+                May this year bring you
+                beautiful surprises,
+                peaceful moments and
+                memories you'll never forget.
+            </p>
+
+            <div class="gold-stars">
+                ✦　✧　✦　✧　✦
+            </div>
+
+            <button class="luxury-button"
+                    onclick="replayExperience()">
+                Replay <span>↻</span>
+            </button>
+
         </div>
-
-        <div class="heart">
-            ♡
-        </div>
-
-        <h1>
-            Happy Birthday
-        </h1>
-
-        <h2 class="final-name">
-            Masood
-        </h2>
-
-        <p>
-            May this year bring you
-            beautiful surprises,
-            peaceful moments and
-            memories you'll never forget. ✨
-        </p>
-
-        <div class="gold-stars">
-            ✦　✧　✦　✧　✦
-        </div>
-
-        <button onclick="location.reload()">
-            Replay ✦
-        </button>
 
     </section>
 
@@ -276,5 +350,4 @@
     <script src="script.js"></script>
 
 </body>
-
-</html>
+            </html>
