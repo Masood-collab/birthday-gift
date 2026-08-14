@@ -1,74 +1,8 @@
 /* =========================================
-   BIRTHDAY PREMIUM TEMPLATE
+   PREMIUM BIRTHDAY EXPERIENCE
    ========================================= */
 
 let currentMemory = 1;
-
-
-/* =========================================
-   SCREEN NAVIGATION
-   ========================================= */
-
-function goTo(screenId) {
-
-    const screens =
-        document.querySelectorAll(".screen");
-
-    screens.forEach(function(screen) {
-
-        screen.classList.remove("active");
-
-    });
-
-
-    const nextScreen =
-        document.getElementById(screenId);
-
-
-    if (nextScreen) {
-
-        nextScreen.classList.add("active");
-
-    }
-}
-
-
-/* =========================================
-   GIFT OPENING
-   ========================================= */
-
-function openGift() {
-
-    const gift =
-        document.querySelector(".gift");
-
-    const hint =
-        document.getElementById("giftHint");
-
-
-    gift.classList.add("opened");
-
-    hint.style.opacity = "0";
-
-
-    /* Golden particles */
-
-    createParticles(45);
-
-
-    /* Move to memories */
-
-    setTimeout(function() {
-
-        goTo("memories");
-
-    }, 1400);
-}
-
-
-/* =========================================
-   MEMORY DATA
-   ========================================= */
 
 const memories = [
 
@@ -91,7 +25,63 @@ const memories = [
 
 
 /* =========================================
-   NEXT MEMORY
+   SCREEN NAVIGATION
+   ========================================= */
+
+function goTo(screenId) {
+
+    const screens =
+        document.querySelectorAll(".screen");
+
+    screens.forEach(function(screen) {
+
+        screen.classList.remove("active");
+
+    });
+
+    const nextScreen =
+        document.getElementById(screenId);
+
+    if (nextScreen) {
+
+        nextScreen.classList.add("active");
+
+        createParticles(12);
+
+    }
+
+}
+
+
+/* =========================================
+   GIFT
+   ========================================= */
+
+function openGift() {
+
+    const gift =
+        document.querySelector(".gift");
+
+    const hint =
+        document.getElementById("giftHint");
+
+    gift.classList.add("opened");
+
+    hint.style.opacity = "0";
+
+    createParticles(55);
+
+    setTimeout(function() {
+
+        goTo("memories");
+
+    }, 1500);
+
+}
+
+
+/* =========================================
+   MEMORIES
    ========================================= */
 
 function nextMemory() {
@@ -109,8 +99,6 @@ function nextMemory() {
         document.getElementById("memoryButton");
 
 
-    /* If memories are finished */
-
     if (currentMemory >= 3) {
 
         goTo("letterScreen");
@@ -120,15 +108,13 @@ function nextMemory() {
     }
 
 
-    currentMemory++;
-
-
-    /* Fade old image */
-
     image.classList.add("changing");
 
 
     setTimeout(function() {
+
+        currentMemory++;
+
 
         image.src =
             memories[currentMemory - 1].image;
@@ -143,10 +129,8 @@ function nextMemory() {
         image.classList.remove("changing");
 
 
-    }, 400);
+    }, 450);
 
-
-    /* Change final button */
 
     if (currentMemory === 3) {
 
@@ -154,16 +138,17 @@ function nextMemory() {
             "Continue →";
 
     }
+
 }
 
 
 /* =========================================
-   FINAL SCREEN
+   FINAL
    ========================================= */
 
 function showFinal() {
 
-    createParticles(70);
+    createParticles(90);
 
     goTo("finalScreen");
 
@@ -213,7 +198,7 @@ function createParticles(amount) {
 
 
         particle.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
+            (3 + Math.random() * 4) + "s";
 
 
         particle.style.animationDelay =
@@ -229,18 +214,19 @@ function createParticles(amount) {
 
             particle.remove();
 
-        }, 7000);
+        }, 8000);
 
     }
+
 }
 
 
 /* =========================================
-   STARTING PARTICLES
+   INITIAL PARTICLES
    ========================================= */
 
-setTimeout(function() {
+window.addEventListener("load", function() {
 
-    createParticles(20);
+    createParticles(25);
 
-}, 800);
+});
